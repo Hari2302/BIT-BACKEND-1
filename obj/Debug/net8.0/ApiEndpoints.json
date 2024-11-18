@@ -1,0 +1,249 @@
+[
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "GetApplication",
+    "RelativePath": "api/auth/Application",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "Experience",
+    "RelativePath": "api/auth/Experience",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "exp",
+        "Type": "FetchAPI.Models.Experience",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "EditExperience",
+    "RelativePath": "api/auth/Experience/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "exp",
+        "Type": "FetchAPI.Models.Experience",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "DeleteExperience",
+    "RelativePath": "api/auth/Experience/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "GetExperiences",
+    "RelativePath": "api/auth/Experiences",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "Fresher",
+    "RelativePath": "api/auth/Fresher",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fresher",
+        "Type": "FetchAPI.Models.Fresher",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "EditFresher",
+    "RelativePath": "api/auth/Fresher/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "fresher",
+        "Type": "FetchAPI.Models.Fresher",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "DeleteFresher",
+    "RelativePath": "api/auth/Fresher/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "GetFreshers",
+    "RelativePath": "api/auth/Freshers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "Intern",
+    "RelativePath": "api/auth/Intern",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "intern",
+        "Type": "FetchAPI.Models.Intern",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "EditIntern",
+    "RelativePath": "api/auth/Intern/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "intern",
+        "Type": "FetchAPI.Models.Intern",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "DeleteIntern",
+    "RelativePath": "api/auth/Intern/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "GetInterns",
+    "RelativePath": "api/auth/Interns",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "FetchAPI.Models.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registration",
+        "Type": "FetchAPI.Models.Registration",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "SubmitApplication",
+    "RelativePath": "api/auth/submit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "application",
+        "Type": "FetchAPI.Models.ApplicationFormModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
