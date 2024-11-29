@@ -142,3 +142,7 @@ C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\obj\Debug\net8.0\FetchAPI.
 C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\obj\Debug\net8.0\ref\FetchAPI.dll
 C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\bin\Debug\net8.0\FluentEmail.Core.dll
 C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\bin\Debug\net8.0\FluentEmail.Smtp.dll
+C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\obj\Debug\net8.0\FetchAPI.sourcelink.json
+C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\bin\Debug\net8.0\MailKit.dll
+C:\Users\IBE\Desktop\Hariharan S\C#\FetchAPI\FetchAPI\bin\Debug\net8.0\MimeKit.dll

@@ -13,6 +13,6 @@ namespace FetchAPI.Models
 
         public decimal Salary { get; set; }
 
-        public int Exp {  get; set; }
+        public decimal Exp {  get; set; }
     }
 }

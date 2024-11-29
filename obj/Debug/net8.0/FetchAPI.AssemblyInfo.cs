@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FetchAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0f8f802559bbc4d066973683c78db001805d4de")]
 [assembly: System.Reflection.AssemblyProductAttribute("FetchAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FetchAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

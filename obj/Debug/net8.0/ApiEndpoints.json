@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "DeleteApplication",
+    "RelativePath": "api/auth/Applications/{email}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "Experience",
     "RelativePath": "api/auth/Experience",
     "HttpMethod": "POST",
@@ -241,6 +257,27 @@
       {
         "Name": "application",
         "Type": "FetchAPI.Models.ApplicationFormModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "UpdateStatus",
+    "RelativePath": "api/auth/UpdateStatus/{email}/{status}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

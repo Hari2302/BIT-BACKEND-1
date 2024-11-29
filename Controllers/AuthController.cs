@@ -38,25 +38,9 @@ namespace FetchAPI.Controllers
 
             return Ok("Login successful");
         }
+      
 
-        [HttpPost("submit")]
-        public async Task<IActionResult> SubmitApplication(ApplicationFormModel application)
-        {
-            try
-            {
-                if (_context.Applications.Any(r => r.Email == application.Email))
-                    return BadRequest("User already exists.");
 
-                _context.Applications.Add(application);
-                await _context.SaveChangesAsync();
-                return Ok("Application submitted successfully.");
-            }
-            catch (Exception ex)
-            {
-    
-                return StatusCode(500, "Internal server error");
-            }
-        }
         [HttpPost("Intern")]
         public async Task<IActionResult> Intern(Intern intern)
         {
@@ -250,7 +234,69 @@ namespace FetchAPI.Controllers
             return Ok("Experience deleted successfully.");
         }
 
+        //----------------------------------------Carrers
+        [HttpPost("submit")]
+        public async Task<IActionResult> SubmitApplication([FromBody] ApplicationFormModel application)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(application.Resume))
+                {
+                    return BadRequest("Resume link is required.");
+                }
 
+                // Save application to the database
+                _context.Applications.Add(application);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { Message = "Application submitted successfully." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+        // Delete Application Form
+        [HttpDelete("Applications/{email}")]
+        public async Task<IActionResult> DeleteApplication(string email)
+        {
+            var app = await _context.Applications.FirstOrDefaultAsync(a => a.Email == email);
+            if (app == null)
+            {
+                return NotFound("Application not found.");
+            }
+
+            _context.Applications.Remove(app);
+            await _context.SaveChangesAsync();
+            return Ok("Application deleted successfully.");
+        }
+
+
+
+
+        // Update Fresher (PUT)
+        [HttpPut("UpdateStatus/{email}/{status}")]
+        public async Task<IActionResult> UpdateStatus(string email,string status)
+        {
+            var existingApp = await _context.Applications.FindAsync(email);
+            if (existingApp == null)
+            {
+                return NotFound("Application not found.");
+            }
+            existingApp.Status = status;
+           
+
+            _context.Applications.Update(existingApp);
+            await _context.SaveChangesAsync();
+            return Ok(" updated successfully.");
+        }
     }
 
+
+
+
 }
+
+
