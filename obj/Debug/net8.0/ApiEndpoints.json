@@ -11,6 +11,38 @@
   },
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "ApproveApplication",
+    "RelativePath": "api/auth/Application/{id}/approve",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
+    "Method": "DenyApplication",
+    "RelativePath": "api/auth/Application/{id}/deny",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "DeleteApplication",
     "RelativePath": "api/auth/Applications/{email}",
     "HttpMethod": "DELETE",
@@ -44,14 +76,14 @@
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "EditExperience",
-    "RelativePath": "api/auth/Experience/{id}",
+    "RelativePath": "api/auth/Experience/{email}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "email",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -65,14 +97,14 @@
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "DeleteExperience",
-    "RelativePath": "api/auth/Experience/{id}",
+    "RelativePath": "api/auth/Experience/{email}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "email",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -107,14 +139,14 @@
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "EditFresher",
-    "RelativePath": "api/auth/Fresher/{id}",
+    "RelativePath": "api/auth/Fresher/{email}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "email",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -128,14 +160,14 @@
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "DeleteFresher",
-    "RelativePath": "api/auth/Fresher/{id}",
+    "RelativePath": "api/auth/Fresher/{email}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "email",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -170,14 +202,14 @@
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "EditIntern",
-    "RelativePath": "api/auth/Intern/{id}",
+    "RelativePath": "api/auth/Intern/{email}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "email",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -191,14 +223,14 @@
   {
     "ContainingType": "FetchAPI.Controllers.AuthController",
     "Method": "DeleteIntern",
-    "RelativePath": "api/auth/Intern/{id}",
+    "RelativePath": "api/auth/Intern/{email}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "email",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

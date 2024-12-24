@@ -1,4 +1,5 @@
 ﻿using FetchAPI.Models;
+using FluentEmail.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -124,11 +125,43 @@ namespace FetchAPI.Controllers
             return Ok(app); // Return the list of experienced employees
         }
 
-        // Edit Intern (PUT)
-        [HttpPut("Intern/{id}")]
-        public async Task<IActionResult> EditIntern(int id, Intern intern)
+
+        // Approve an application
+        [HttpPut("Application/{id}/approve")]
+        public async Task<IActionResult> ApproveApplication(int id)
         {
-            var existingIntern = await _context.Interns.FindAsync(id);
+            var application = await _context.Applications.FindAsync(id);
+            if (application == null)
+            {
+                return NotFound(new { Message = "Application not found" });
+            }
+
+            application.Status = "Approved";
+            await _context.SaveChangesAsync();
+
+            return Ok(new { Message = "Application approved successfully" });
+        }
+
+        // Deny an application
+        [HttpPut("Application/{id}/deny")]
+        public async Task<IActionResult> DenyApplication(int id)
+        {
+            var application = await _context.Applications.FindAsync(id);
+            if (application == null)
+            {
+                return NotFound(new { Message = "Application not found" });
+            }
+
+            application.Status = "Denied";
+            await _context.SaveChangesAsync();
+
+            return Ok(new { Message = "Application denied successfully" });
+        }
+        // Edit Intern (PUT)
+        [HttpPut("Intern/{email}")]
+        public async Task<IActionResult> EditIntern(string email, Intern intern)
+        {
+            var existingIntern = await _context.Interns.FirstOrDefaultAsync(a => a.Email == email);
             if (existingIntern == null)
             {
                 return NotFound("Intern not found.");
@@ -138,6 +171,10 @@ namespace FetchAPI.Controllers
             existingIntern.Email = intern.Email;
             existingIntern.Phone = intern.Phone;
             existingIntern.Role = intern.Role;
+            existingIntern.Type = intern.Type;
+            existingIntern.Salary = intern.Salary;
+            existingIntern.Exp = existingIntern.Exp;
+
 
             _context.Interns.Update(existingIntern);
             await _context.SaveChangesAsync();
@@ -145,10 +182,11 @@ namespace FetchAPI.Controllers
         }
 
         // Delete Intern (DELETE)
-        [HttpDelete("Intern/{id}")]
-        public async Task<IActionResult> DeleteIntern(int id)
+        [HttpDelete("Intern/{email}")]
+      
+        public async Task<IActionResult> DeleteIntern(string email)
         {
-            var intern = await _context.Interns.FindAsync(id);
+            var intern = await _context.Interns.FirstOrDefaultAsync(a => a.Email == email);
             if (intern == null)
             {
                 return NotFound("Intern not found.");
@@ -162,10 +200,10 @@ namespace FetchAPI.Controllers
         // Similarly, you can implement the same for Fresher and Experience models
 
         // Edit Fresher (PUT)
-        [HttpPut("Fresher/{id}")]
-        public async Task<IActionResult> EditFresher(int id, Fresher fresher)
+        [HttpPut("Fresher/{email}")]
+        public async Task<IActionResult> EditFresher(string email, Fresher fresher)
         {
-            var existingFresher = await _context.Freshers.FindAsync(id);
+            var existingFresher = await _context.Freshers.FirstOrDefaultAsync(a => a.Email == email);
             if (existingFresher == null)
             {
                 return NotFound("Fresher not found.");
@@ -176,6 +214,8 @@ namespace FetchAPI.Controllers
             existingFresher.Phone = fresher.Phone;
             existingFresher.Role = fresher.Role;
             existingFresher.Salary = fresher.Salary;
+            existingFresher.Type = existingFresher.Type;
+            existingFresher.Exp = existingFresher.Exp;
 
             _context.Freshers.Update(existingFresher);
             await _context.SaveChangesAsync();
@@ -183,10 +223,10 @@ namespace FetchAPI.Controllers
         }
 
         // Delete Fresher (DELETE)
-        [HttpDelete("Fresher/{id}")]
-        public async Task<IActionResult> DeleteFresher(int id)
+        [HttpDelete("Fresher/{email}")]
+        public async Task<IActionResult> DeleteFresher(string email)
         {
-            var fresher = await _context.Freshers.FindAsync(id);
+            var fresher = await _context.Freshers.FirstOrDefaultAsync(a => a.Email == email);
             if (fresher == null)
             {
                 return NotFound("Fresher not found.");
@@ -198,10 +238,11 @@ namespace FetchAPI.Controllers
         }
 
         // Edit Experience (PUT)
-        [HttpPut("Experience/{id}")]
-        public async Task<IActionResult> EditExperience(int id, Experience exp)
+        [HttpPut("Experience/{email}")]
+        public async Task<IActionResult> EditExperience(string email, Experience exp)
         {
-            var existingExp = await _context.Experiencer.FindAsync(id);
+
+            var existingExp = await _context.Experiencer.FirstOrDefaultAsync(a => a.Email == email);
             if (existingExp == null)
             {
                 return NotFound("Experience not found.");
@@ -212,6 +253,8 @@ namespace FetchAPI.Controllers
             existingExp.Phone = exp.Phone;
             existingExp.Role = exp.Role;
             existingExp.Salary = exp.Salary;
+            existingExp.Type = exp.Type;
+            existingExp.Exp = exp.Exp;
             
 
             _context.Experiencer.Update(existingExp);
@@ -220,10 +263,10 @@ namespace FetchAPI.Controllers
         }
 
         // Delete Experience (DELETE)
-        [HttpDelete("Experience/{id}")]
-        public async Task<IActionResult> DeleteExperience(int id)
+        [HttpDelete("Experience/{email}")]
+        public async Task<IActionResult> DeleteExperience(string email)
         {
-            var experience = await _context.Experiencer.FindAsync(id);
+            var experience = await _context.Experiencer.FirstOrDefaultAsync(a => a.Email == email);
             if (experience == null)
             {
                 return NotFound("Experience not found.");

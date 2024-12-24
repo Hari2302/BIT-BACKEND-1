@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "lpew+hGi6B+S0SNVEpQ6Axk6qBUsmf5WsQzhw4SSwvc=",
+  "Hash": "jkrlChzcSZ9zirT6qu4le50+wyzLHQTpYabSmBSjPL8=",
   "Source": "FetchAPI",
   "BasePath": "_content/FetchAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
